@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { CustomYouTubePlayer } from "@/components/ui/video-player";
@@ -8,7 +9,7 @@ import { Loader } from "@/components/ui/loader";
 import { PomodoroTimer } from "@/components/ui/pomodoro-timer";
 
 
-export default function FullScreenVideoPage() {
+function WatchContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const videoId = searchParams.get("id");
@@ -16,20 +17,19 @@ export default function FullScreenVideoPage() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    console.log(videoId)
+    console.log(videoId);
     if (!videoId) {
       setError("لم يتم توفير معرف الفيديو");
       setLoading(false);
       return;
     }
-
     setLoading(false);
   }, [videoId]);
 
   if (loading) {
     return (
       <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
-       <Loader />
+        <Loader />
       </div>
     );
   }
@@ -52,5 +52,20 @@ export default function FullScreenVideoPage() {
       </div>
       <PomodoroTimer />
     </div>
+  );
+}
+
+
+export default function FullScreenVideoPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
+          <Loader />
+        </div>
+      }
+    >
+      <WatchContent />
+    </Suspense>
   );
 }
