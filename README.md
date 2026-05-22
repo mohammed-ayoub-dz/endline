@@ -226,15 +226,15 @@ All endpoints are prefixed with `/api`.
 
 ### Login Page
 
-![Login Page](images/login.png.png)
+![Login Page](images/login.png)
 
 ### Dashboard
 
-![Dashboard](images/dashboard.png.png)
+![Dashboard](images/dashboard.png)
 
 ### Custom Video Player (Focus Mode)
 
-![Video Player](images/video.png.png)
+![Video Player](images/video.png)
 
 ### Pomodoro Timer (Focus Mode)
 
