@@ -19,7 +19,6 @@ Endline is a full‑stack web application that helps students study efficiently 
 - [Deployment](#deployment)
 - [License](#license)
 
-## Features
 
 ### Core
 
@@ -64,8 +63,8 @@ Video playback is handled by a custom YouTube player wrapper that hides all YouT
 
 ### Prerequisites
 
-- Go 1.21+
-- PostgreSQL 15+
+- Go 
+- PostgreSQL 
 
 ### Installation
 
@@ -108,7 +107,7 @@ The server will start on `http://localhost:8080`.
 
 ### Prerequisites
 
-- Node.js 20+
+- Bun.js 
 
 ### Installation
 
